@@ -8,8 +8,6 @@
 
 account_info *account_database;
 
-
-
 void *lender(void *arg)
 {
     int tid = (int)arg;
@@ -55,8 +53,6 @@ int main(int argc, char *argv[])
   // Initialize account_database
   account_init(account_database, num_account);
 
-
-
   for (i=0; i<num_account; i++) {
     printf("Account: %d; name: %s; balance: %d\n", i, account_database[i].name, account_database[i].balance);
   }
@@ -83,7 +79,6 @@ int main(int argc, char *argv[])
 
 void *thread(void *vargp)
 {
-
   int cnt = *((int *)vargp);
   borrower((void *)cnt);
   lender((void *)cnt);
